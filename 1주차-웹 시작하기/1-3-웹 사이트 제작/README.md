@@ -22,14 +22,20 @@
         - **`delay`** : 효과가 발동되기까지의 시간 조건을 지정한다.
         - **`timing-function`** : 전환 효과의 속도 곡선을 지정한다.
     - **`transition`** 의 속성 값들을 한 줄로 작성할 때, 나머지 속성 값의 순서는 상관 없지만, 항상 **`duration`** 이 먼저, **`delay`** 가 나중에 작성되어야 합니다.
-    - **`.transition:hover('마우스를 올렸을 때'를 뜻함)`** 를 띄어쓰기 없이 작성해야 합니다.
+    - **`.transition:hover('마우스를 올렸을 때'를 뜻함)`** 를 띄어쓰기 없이 작성해야 합니다.<br/><br/>
+
+
 - **Animation**
     - **`animation-delay`** : 애니메이션이 **시작하기 전 딜레이할 시간** 을 설정하는 속성
     - **`animation-timing-function`** : 애니메이션 **속도 곡선을 제어** 하는 속성
     - **`animation-duration`** : 애니메이션이 **실행되는 시간을 설정** 하는 속성
-    - **`animation-iteration-count`** : 애니메이션이 **재생되는 횟수를 제한** 하는 속성
+    - **`animation-iteration-count`** : 애니메이션이 **재생되는 횟수를 제한** 하는 속성<br/><br/>
+
+
 - **Transition & Animation**
-    - 1000ms = 1s
+    - 1000ms = 1s<br/><br/>
+
+
 - **미디어쿼리**
     - PC 뿐만 아니라 모바일과 태블릿에도 대응되는 웹사이트를 만들기 위해서 사용
     - 모바일에 대응되는 **반응형 또는 적응형 웹사이트** 를 만들 때 사용되는 CSS 구문

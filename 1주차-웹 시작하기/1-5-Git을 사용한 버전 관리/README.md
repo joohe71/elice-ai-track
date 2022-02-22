@@ -28,14 +28,14 @@
         **`git config --list`** : git 설정 확인
         
     - **`git commit --amend -m "내용"`** : commit 메세지 수정하기
-    - **git branch -d `브랜치명`**은 merge 이후만 삭제가능/ **git branch -D `브랜치명`**은 merge되나 안되나 강제 삭제
+    - **git branch -d `브랜치명`** 은 merge 이후만 삭제가능/ **git branch -D `브랜치명`** 은 merge되나 안되나 강제 삭제
     - ~~git reset (git log해서 해당으로 돌아갈 코드복사 붙여넣기)—hard <커밋 해시>를 사용하면 현재 브랜치를 특정한 커밋으로 이동할 수 있다.~~ => **보류**
-    - **`git reset HEAD^`** : 이전 커밋으로 reset하기
+    - **`git reset HEAD^`** : 이전 커밋으로 reset하기<br/><br/> 
 
-
+ 
 - **Git 저장소**
     - **미리 만들어진 원격 저장소**를 복사하기 때문에 로컬 저장소를 생성할 필요가 없습니다
-    - **작업 순서** : **`git clone`** -> **`git checkout`** -> **커밋 생성** -> **`git push`**
+    - **작업 순서** : **`git clone`** -> **`git checkout`** -> **커밋 생성** -> **`git push`** <br/><br/>
 
 
 - **참고**
