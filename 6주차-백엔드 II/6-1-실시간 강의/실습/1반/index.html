@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      textarea {
+        width: 500px;
+        height: 500px;
+      }
+      #code {
+        display: flex;
+      }
+    </style>
+    <script>
+      async function login(id, pw) {
+        const response = await fetch("/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: id,
+            password: pw,
+          }),
+        });
+        const json = await response.json();
+        console.log(json);
+        if (json.status == "succ") {
+          return true;
+        }
+        return false;
+      }
+
+      async function codeRun(code) {
+        const response = await fetch("/code_run", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            code: code,
+          }),
+        });
+        const json = await response.json();
+        console.log(json);
+        if (json.status == "succ") {
+          return json.result.join("\n");
+        }
+        return json.result;
+      }
+
+      window.onload = () => {
+        const loginForm = document.getElementById("loginForm");
+
+        loginForm.onsubmit = (e) => {
+          e.preventDefault();
+          login(e.target.id.value, e.target.pw.value).then((result) => {
+            if (result == true) {
+              // 로그인 성공
+              const codeDOM = document.querySelector(
+                "#codeForm > textarea:nth-child(1)"
+              );
+              console.log(codeDOM);
+              codeDOM.disabled = false;
+              alert("로그인 성공");
+            } else {
+              alert("로그인 실패");
+            }
+          });
+        };
+
+        const codeForm = document.getElementById("codeForm");
+
+        codeForm.onsubmit = (e) => {
+          e.preventDefault();
+          codeRun(e.target.code.value).then((result) => {
+            e.target.result.value = result;
+          });
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Online Python</h1>
+    <form id="loginForm">
+      <input type="text" name="id" />
+      <input type="password" name="pw" />
+      <input type="submit" value="로그인" />
+    </form>
+
+    <form id="codeForm">
+      <textarea name="code" disabled></textarea>
+      <input type="submit" value="실행" />
+      <textarea name="result" disabled></textarea>
+    </form>
+  </body>
+</html>

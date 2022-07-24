@@ -1,0 +1,18 @@
+.changeBox {
+    width: 100px;
+    height: 100px;
+    background-color: #532fa1;
+    
+    /* 지시사항 1번을 하세요. */
+    transition: background-color 0.5s 1s
+    
+    
+
+}
+.changeBox:hover {
+
+    /* 지시사항 2번을 하세요. */
+    background-color: #a44789;
+    
+    
+}

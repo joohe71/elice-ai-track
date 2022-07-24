@@ -1,0 +1,22 @@
+{
+  "name": "class1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.10.0"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.2.3",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "python-shell": "^3.0.1"
+  }
+}

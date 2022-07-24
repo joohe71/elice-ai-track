@@ -1,0 +1,61 @@
+.listview {
+    display: block;
+    position: relative;
+    min-height: 120px;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.listview ol {
+    margin: 0;
+    padding-left: 2em;
+}
+
+.listview ol li {
+    clear: both;
+    margin-bottom: 8px;
+}
+
+.listview ol li span{
+    float: left;
+    font-size: 16px;
+/*     추가 */
+    position: relative;
+}
+
+/* 완료시 취소선 이펙트 구현 */
+.listview ol li span::after {
+/*     content를 적어주지 않으면 after부분이 실행이 안되기 때문에 꼭 써주기 */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transition: width 0.2s ease-in-out;
+    width: 0%;
+    height: 3px;
+    background-color: #524FA1;
+}
+
+.listview ol li.completed span::after {
+    width: 100%;
+}
+
+/* .listview ol li.completed span {
+    text-decoration: line-through;
+} */
+
+.listview ol li button {
+    float: right;
+    margin-left: 4px;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    background-color: #524FA1;
+    padding: 4px 8px;
+}
+
+.listview ol li button.remove {
+    background-color: #FA466A;
+}
